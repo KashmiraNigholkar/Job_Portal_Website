@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import  {assets} from '../assets/assets'
 import {useClerk,UserButton,useUser} from '@clerk/clerk-react'
 
@@ -7,10 +7,11 @@ const Navbar = () => {
   
   const {openSignIn}=useClerk()
   const {user}=useUser()
+  const navigate=useNavigate()
   return (
     <div className='shadow py-4'>
       <div className='container px-4 2xl:px-20 mx-auto flex justify-between'>
-        <img src={assets.logo} alt="" className='cursor-pointer' />
+        <img onClick={()=>navigate('/')} src={assets.logo} alt="" className='cursor-pointer' />
         {
           user
           ?
