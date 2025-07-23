@@ -30,8 +30,8 @@ View and delete job listings or accounts
 
 Monitor site activity
 
-🧑‍💻 Technologies Used
-Frontend: HTML, CSS, JavaScript
+🧑‍💻 Technologies Used:
+Frontend: HTML, CSS, JavaScript.
 
 Backend: PHP
 
