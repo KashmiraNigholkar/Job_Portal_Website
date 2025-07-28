@@ -48,8 +48,8 @@ const DashBoard = () => {
                   }`
                 }
               >
-                <img src={assets.add_icon} alt="Add" className="w-5" />
-                <p>Add Job</p>
+                <img src={assets.add_icon} alt="Add" className="min-w-4" />
+                <p className='max-sm:hidden'>Add Job</p>
               </NavLink>
             </li>
             <li>
@@ -61,8 +61,8 @@ const DashBoard = () => {
                   }`
                 }
               >
-                <img src={assets.home_icon} alt="Manage" className="w-5" />
-                <p>Manage Jobs</p>
+                <img src={assets.home_icon} alt="Manage" className="min-w-4" />
+                <p className='max-sm:hidden'>Manage Jobs</p>
               </NavLink>
             </li>
             <li>
@@ -74,8 +74,8 @@ const DashBoard = () => {
                   }`
                 }
               >
-                <img src={assets.person_tick_icon} alt="Applications" className="w-5" />
-                <p>View Applications</p>
+                <img src={assets.person_tick_icon} alt="Applications" className="min-w-4" />
+                <p className='max-sm:hidden'>View Applications</p>
               </NavLink>
             </li>
           </ul>
