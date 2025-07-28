@@ -1,28 +1,30 @@
 import { createContext, useEffect, useState } from 'react';
 import { jobsData } from '../assets/assets';
 
+// Create the context
 export const AppContext = createContext();
 
-export const AppContextProvider = (props) => {
-    const [searchFilters, setSearchFilter] = useState({
-        title: '',
-        location: '',
-    });
+// Create the provider component
+export const AppContextProvider = ({ children }) => {
+  const [searchFilters, setSearchFilter] = useState({
+    title: '',
+    location: '',
+  });
 
-    const [isSearched, setIsSearched] = useState(false);
-    const [jobs, setJobs] = useState([]);
-    const [showRecruiterLogin,setShowRecruiterLogin]=useState(false)
+  const [isSearched, setIsSearched] = useState(false);
+  const [jobs, setJobs] = useState([]);
 
-    const fetchJobs = async () => {
-        setJobs(jobsData);
-    };
+  const [showRecruiterLogin, setShowRecruiterLogin] = useState(false); // Controls modal visibility
 
-    useEffect(() => {
-        fetchJobs();
-    }, []);
+  useEffect(() => {
+    // Simulate job fetching
+    setJobs(jobsData);
+  }, []);
 
-    const value = {
-        searchFilters,        // ✅ correct naming
+  return (
+    <AppContext.Provider
+      value={{
+        searchFilters,
         setSearchFilter,
         isSearched,
         setIsSearched,
@@ -30,11 +32,9 @@ export const AppContextProvider = (props) => {
         setJobs,
         showRecruiterLogin,
         setShowRecruiterLogin,
-    };
-
-    return (
-        <AppContext.Provider value={value}>
-            {props.children}
-        </AppContext.Provider>
-    );
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };

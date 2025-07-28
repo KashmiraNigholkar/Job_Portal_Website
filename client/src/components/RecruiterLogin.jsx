@@ -39,7 +39,18 @@ const RecruiterLogin = () => {
         onSubmit={handleSubmit}
         className="relative bg-white p-10 rounded-xl text-slate-500 w-[350px]"
       >
-       
+        {/* ❌ Close Button */}
+        <button
+          type="button"
+          onClick={() => setShowRecruiterLogin(false)}
+          className="absolute top-4 right-4 text-gray-500 hover:text-black transition"
+        >
+          <img
+            src={assets.cross_icon}
+            alt="Close"
+            className="w-5 h-5"
+          />
+        </button>
 
         <h1 className="text-2xl font-medium text-neutral-700 text-center">
           Recruiter {authMode}
@@ -187,13 +198,6 @@ const RecruiterLogin = () => {
             </>
           )}
         </p>
-         {/* ❌ Close Button */}
-        <img
-          onClick={() => setShowRecruiterLogin(false)}
-          src={assets.cross_icon}
-          className="absolute top-5 right-5 cursor-pointer w-5 h-5"
-          alt="Close"
-        />
       </form>
     </div>
   );

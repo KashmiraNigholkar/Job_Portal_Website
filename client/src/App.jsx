@@ -10,7 +10,7 @@ const App = () => {
   const {showRecruiterLogin}=useContext(AppContext)
   return (
     <div>
-      <RecruiterLogin/>
+    { showRecruiterLogin && <RecruiterLogin/>}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/apply-job/:id" element={<ApplyJob />} /> {/* ✅ Correct route */}
