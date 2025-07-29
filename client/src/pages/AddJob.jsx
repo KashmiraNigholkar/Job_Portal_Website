@@ -112,7 +112,7 @@ const AddJob = () => {
       {/* Job Salary */}
       <div>
         <p className='mb-2'>Job Salary</p>
-        <input
+        <input min={0}
           type="number"
           placeholder='2500'
           onChange={e => setSalary(e.target.value)}
@@ -124,7 +124,7 @@ const AddJob = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="bg-blue-600 text-white px-5 py-2 mt-4 rounded hover:bg-blue-700 transition"
+        className='w-28 py-3 mt-4 bg-black text-white rounded'
       >
         ADD
       </button>
